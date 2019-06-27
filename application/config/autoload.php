@@ -58,7 +58,9 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+//$autoload['libraries'] = array(); //for todo: default
+//$autoload['libraries'] = array('session'); //for todo: for including api
+$autoload['libraries'] = array('database', 'session', 'email'); //for todo: for not including api (external server api)
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +91,8 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+//$autoload['helper'] = array(); //for todo: default
+$autoload['helper'] = array('url', 'language', 'common');
 
 /*
 | -------------------------------------------------------------------

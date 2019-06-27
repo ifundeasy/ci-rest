@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$root = (isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+$root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+//$config['api_server'] = 'http://external.com/rest.api/'; //for todo: base url for external api
+$config['title'] = "CI Rest"; //for todo: used for app name
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -23,7 +28,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+//$config['base_url'] = ''; //for todo: default
+//$config['base_url'] = 'http://localhost/ci-template/'; //for todo: standard static baseurl
+$config['base_url'] = $root; //for todo: auto generation from current working directory and auto select using http or https
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +42,8 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+//$config['index_page'] = 'index.php'; //for todo: default
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
